@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Todo</title>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="public/javascripts/app.js"></script>
+  </head>
+  <body ng-app="TodoApp">
+    <div ng-controller="TodosCtrl">
+    <form ng-submit="addTodo() ">
+      <input type="text" ng-model="newTodo.title">
+      <button>Save Todo</button>
+    </form>
+
+    <div ng-repeat="todo in todos">
+      {{ todo.title }}
+      <button ng-click="delete()">Remove</button>
+    </div>
+    </div>
+  </body>
+</html>
